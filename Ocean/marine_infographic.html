@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monterey Bay Under Threat: Policy Impacts on Marine Life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 50%, #002266 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: #ff6b47;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .header .intro {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .crisis-alert {
+            background: linear-gradient(45deg, #ff4444, #cc0000);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255,255,255,0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,68,68,0.5); }
+            50% { box-shadow: 0 0 30px rgba(255,68,68,0.8); }
+        }
+        
+        .crisis-alert h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        .stats-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            color: #ff6b47;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+        
+        .stat-card:hover::before {
+            opacity: 1;
+            animation: shine 0.6s ease-in-out;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .stat-number {
+            font-size: 3.2em;
+            font-weight: bold;
+            color: #ff6b47;
+            display: block;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .stat-description {
+            font-size: 0.9em;
+            margin-top: 10px;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        .detailed-section {
+            background: rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .detailed-section h2 {
+            color: #ff6b47;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ff6b47;
+            padding-bottom: 10px;
+        }
+        
+        .policy-timeline {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            border-left: 5px solid #ff6b47;
+        }
+        
+        .timeline-date {
+            background: #ff6b47;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-right: 20px;
+            min-width: 100px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        
+        .timeline-content h3 {
+            color: #ffd700;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content p {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .impact-item {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #ff6b47;
+            transition: all 0.3s ease;
+        }
+        
+        .impact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+        
+        .impact-item h3 {
+            color: #ffd700;
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+        
+        .impact-item p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .impact-details {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .quote-section {
+            background: linear-gradient(45deg, rgba(255,107,71,0.2), rgba(255,133,102,0.2));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border-left: 5px solid #ff6b47;
+        }
+        
+        .quote-text {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .community-voices {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .voice-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #ffd700;
+        }
+        
+        .voice-title {
+            color: #ffd700;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .voice-content {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        
+        .solutions-section {
+            background: linear-gradient(45deg, rgba(0,150,0,0.3), rgba(0,200,0,0.2));
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .solution-card {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #00cc66;
+        }
+        
+        .solution-card h3 {
+            color: #00ff88;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .local-data {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .data-point {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .data-number {
+            font-size: 2em;
+            color: #ff6b47;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .call-to-action {
+            background: linear-gradient(45deg, #ff6b47, #ff8566);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .call-to-action h2 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+        
+        .call-to-action p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .action-card {
+            background: rgba(255,255,255,0.2);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        
+        .action-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .action-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .action-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .action-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .action-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .wave-decoration {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .wave-decoration::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="rgba(255,255,255,0.1)"/></svg>') repeat-x;
+            background-size: 1200px 100px;
+            animation: wave 15s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-100px); }
+        }
+        
+        .footer {
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            color: #ff6b47;
+            margin-bottom: 15px;
+        }
+        
+        .footer-section a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .source {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.7;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline-date {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header wave-decoration">
+            <h1>🌊 Monterey Bay Under Threat</h1>
+            <p class="subtitle">How Federal Policy Changes Are Devastating Our Marine Ecosystems</p>
+            <p class="intro">A comprehensive analysis by UC Santa Cruz undergraduate researchers in partnership with Save Our Shores, revealing the urgent crisis facing our local marine environment and the communities that depend on it.</p>
+        </div>
+        
+        <div class="crisis-alert">
+            <h2>⚠️ URGENT: Marine Sanctuary in Crisis</h2>
+            <p>Federal budget cuts and policy rollbacks are threatening the future of Monterey Bay National Marine Sanctuary – one of America's most precious marine ecosystems.</p>
+        </div>
+        
+        <div class="stats-section">
+            <h2 class="section-title">📊 The Crisis by the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">27%</span>
+                    <div class="stat-label">NOAA Budget Cut</div>
+                    <div class="stat-description">"The administration has proposed cutting NOAA’s allocation from around $6.1 billion to about $4.5 billion, a decrease of nearly $1.7 billion, or 27%"(Haifley).</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">40%</span>
+                    <div class="stat-label">Marine Sanctuary Funding Slashed</div>
+                    <div class="stat-description">"18 national marine sanctuaries that cover 629,000 square miles of water, for the fiscal year starting on Oct. 1"(Haifley).</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">800+</span>
+                    <div class="stat-label">Jobs Eliminated</div>
+                    <div class="stat-description">"More than 800 employees were dismissed in February's initial sweep across NOAA, a congressional source told CBS News after the firings"(Czachor).</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$1.5B</span>
+                    <div class="stat-label">Tourism Revenue at Risk</div>
+                    <div class="stat-description">Annual economic impact in Monterey and Santa Cruz counties threatened</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">629,000+</span>
+                    <div class="stat-label">Square Miles Unprotected</div>
+                    <div class="stat-description">Ocean space currently protected by NOAA now vulnerable to exploitation</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">11M</span>
+                    <div class="stat-label">Metric Tons of Plastic</div>
+                    <div class="stat-description">Annual plastic pollution entering oceans, with reduced monitoring and cleanup</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="policy-timeline">
+            <h2 class="section-title">📅 Timeline of Environmental Rollbacks</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 2025</div>
+                <div class="timeline-content">
+                    <h3>Executive Orders Begin Environmental Rollback</h3>
+                    <p>Trump administration issues multiple executive orders reversing marine protections, withdrawing from climate agreements, and prioritizing fossil fuel development over conservation.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Apr 2025</div>
+                <div class="timeline-content">
+                    <h3>Marine Monuments Targeted</h3>
+                    <p>Executive order calls for review of all marine national monuments, with plans to reopen Pacific Islands Heritage Marine National Monument to commercial fishing.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">May 2025</div>
+                <div class="timeline-content">
+                    <h3>NOAA Budget Cuts Proposed</h3>
+                    <p>Administration proposes devastating 27% budget reduction to NOAA, directly threatening Monterey Bay National Marine Sanctuary operations and research.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Ongoing</div>
+                <div class="timeline-content">
+                    <h3>Regulatory Weakening Continues</h3>
+                    <p>Systematic dismantling of Clean Water Act protections, expansion of offshore drilling permits, and elimination of climate monitoring programs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="detailed-section">
+            <h2>🐟 Environmental Consequences: The Science of Destruction</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h3>Ocean Pollution Crisis</h3>
+                    <p>With weakened oversight, industrial pollution is accelerating at unprecedented rates.</p>
+                    <div class="impact-details">
+                        <strong>Key pollutants:</strong> 8-10 million metric tons of plastic waste annually, 260 metric tons of mercury from factories, agricultural nitrates creating massive dead zones
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Marine Dead Zones Expanding</h3>
+                    <p>Over 400 hypoxic zones worldwide where marine life cannot survive due to pollution.</p>
+                    <div class="impact-details">
+                        <strong>Local impact:</strong> Similar conditions developing off California coast, threatening kelp forests and fish populations
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Species Population Collapse</h3>
+                    <p>Millions of marine species face extinction from habitat loss and contamination.</p>
+                    <div class="impact-details">
+                        <strong>Monterey Bay impact:</strong> Sea otters, harbor seals, and over 525+ fish species at risk from reduced sanctuary protection
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Food Chain Contamination</h3>
+                    <p>Toxins accumulating in seafood pose serious health risks to human consumers.</p>
+                    <div class="impact-details">
+                        <strong>Health risks:</strong> Mercury and lead poisoning, microplastics in seafood, neurological disorders from contaminated fish
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Climate Change Acceleration</h3>
+                    <p>Ocean warming and acidification accelerating due to reduced monitoring and protection.</p>
+                    <div class="impact-details">
+                        <strong>Local effects:</strong> Kelp forest die-offs, coral bleaching, species migration disrupting local ecosystems
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Habitat Fragmentation</h3>
+                    <p>Marine protected areas losing effectiveness as connecting corridors are opened to exploitation.</p>
+                    <div class="impact-details">
+                        <strong>Consequence:</strong> Isolated populations unable to maintain genetic diversity or recover from disturbances
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="detailed-section">
+            <h2>🏘️ Community Impacts: People and Livelihoods at Risk</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h3>Economic Devastation</h3>
+                    <p>Tourism industry supporting thousands of jobs faces unprecedented threats.</p>
+                    <div class="impact-details">
+                        <strong>At risk:</strong> Hotels, restaurants, tour operators, dive shops, kayak rentals, whale watching businesses generating $4.4B annually
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Fishing Industry Collapse</h3>
+                    <p>Commercial and recreational fishing facing unsustainable pressure without scientific oversight.</p>
+                    <div class="impact-details">
+                        <strong>Threat:</strong> Overfishing without NOAA monitoring could lead to population crashes, ending centuries of sustainable fishing
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Educational Institutions Affected</h3>
+                    <p>UCSC's world-renowned marine biology program (#2 nationally) losing federal research support.</p>
+                    <div class="impact-details">
+                        <strong>Impact:</strong> Reduced graduate funding, fewer research opportunities, potential faculty losses, declining national ranking
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Public Health Crisis</h3>
+                    <p>Coastal communities facing increased exposure to marine toxins and pollutants.</p>
+                    <div class="impact-details">
+                        <strong>Health risks:</strong> Contaminated seafood, polluted beach water, respiratory problems from algae blooms
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Environmental Justice Issues</h3>
+                    <p>Low-income and communities of color disproportionately affected by environmental degradation.</p>
+                    <div class="impact-details">
+                        <strong>Disparity:</strong> Wealthier communities can relocate; working-class families bear the brunt of pollution and job losses
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Cultural Heritage Loss</h3>
+                    <p>Indigenous and local fishing traditions threatened by ecosystem collapse.</p>
+                    <div class="impact-details">
+                        <strong>Legacy:</strong> Generations of sustainable practices and cultural knowledge at risk of permanent loss
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="local-data">
+            <h2 class="section-title">📍 Monterey Bay by the Numbers</h2>
+            <div class="data-grid">
+                <div class="data-point">
+                    <span class="data-number">#2</span>
+                    <div>UCSC Marine Biology National Ranking</div>
+                </div>
+                <div class="data-point">
+                    <span class="data-number">6,094</span>
+                    <div>Square Miles of Marine Sanctuary</div>
+                </div>
+                <div class="data-point">
+                    <span class="data-number">525+</span>
+                    <div>Fish Species in Monterey Bay</div>
+                </div>
+                <div class="data-point">
+                    <span class="data-number">3,000</span>
+                    <div>Sea Otters in Local Population</div>
+                </div>
+                <div class="data-point">
+                    <span class="data-number">4.5M</span>
+                    <div>Annual Visitors to Monterey Bay Area</div>
+                </div>
+                <div class="data-point">
+                    <span class="data-number">25,000</span>
+                    <div>Tourism Jobs in Region</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="quote-section">
+            <div class="quote-text">"Each year, approximately 8-10 million metric tons of plastic waste enter the oceans, accumulating on the seabed, entangling marine organisms, and being ingested by species across the food web. This leads to the direct mortality of over one million marine animals annually."</div>
+            <div class="quote-author">- Thiagarajan & Devarajan, "The Urgent Challenge of Ocean Pollution"</div>
+        </div>
+        
+        <div class="solutions-section">
+            <h2 class="section-title">💡 Solutions: What's Working Despite Federal Rollbacks</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>California State Leadership</h3>
+                    <p>State-level marine protected areas maintaining conservation despite federal cuts. Enhanced regulations on plastic pollution and increased coastal monitoring funding.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Community Innovation</h3>
+                    <p>"The Aquarium is swimming toward net-zero emissions and waste by 2035"(Monterey Bay Aquarium).</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Academic Partnerships</h3>
+                    <p>"$2.4 million grant supports research on coastal ecosystems at UCSC and other Monterey Bay institutions"(UC Santa Cruz).</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Regional Cooperation</h3>
+                    <p>Cross-border collaboration on marine protection, shared monitoring systems, and coordinated conservation efforts spanning California's central coast.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Technology Solutions</h3>
+                    <p>Advanced filtering systems, debris collection technologies, and improved monitoring equipment being deployed through public-private partnerships.</p>
+                </div>
+                <div class="solution-card">
+                    <h3>Grassroots Advocacy</h3>
+                    <p>"Save Our Shores was formed as the result of a grassroots campaign to prevent oil drilling off our coast in the early 1980’s. We’ve continued to advocate for smarter ocean policies and coastal protections ever since"(Save Our Shores).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="detailed-section">
+            <h2>🔬 The Science Behind the Crisis: Research Findings</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h3>Ocean Acidification Accelerating</h3>
+                    <p>Reduced monitoring means we're losing track of rapidly changing ocean chemistry.</p>
+                    <div class="impact-details">
+                        <strong>According to Encyclopedia of Puget Sound </strong>"Experts at that symposium warned that wildlife in the Salish Sea, from salmon to shellfish, may start to see significant effects from changing water chemistry within the next 10 to 20 years"(Dunagan).
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Microplastics in Food Chain</h3>
+                    <p>Plastic particles found in 90% of seabirds and increasing concentrations in commercially caught fish.</p>
+                    <div class="impact-details">
+                        <strong></strong> "Of course, plastic water bottles can be avoided, but as I read this news from my kitchen, where plastic was touching everything from the berries to the chips to the chicken breasts, I began to wonder just how much microplastic I was consuming daily with my food. The answer, it turns out, is also “a lot.” A 2024 study, for example, found microplastics in 16 different commonly consumed protein products purchased in the United States"(Bunch).
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Marine Heat Waves</h3>
+                    <p>Increasing frequency and intensity of ocean temperature spikes causing mass die-offs.</p>
+                    <div class="impact-details">
+                        <strong>Monterey Bay:</strong> Kelp forest reductions of up to 95% during recent heat waves, affecting entire ecosystem structure
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Chemical Contamination</h3>
+                    <p>"Farm Runoff May Be Tied to Respiratory Illness Near the Salton Sea"(Gewin).</p>
+                    <div class="impact-details">
+                        <strong>Pollutants:</strong> Pesticides, pharmaceuticals, heavy metals accumulating in sediments and marine organisms
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Noise Pollution Impact</h3>
+                    <p>Increased shipping and offshore drilling disrupting marine mammal communication and migration.</p>
+                    <div class="impact-details">
+                        <strong>Species affected:</strong> Whales, dolphins, sea otters showing stress behaviors and population declines
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Overfishing Without Oversight</h3>
+                    <p>"overfishing drove the cod fishery to collapse when the population fell to one percent of its historical levels. Thousands of fishermen and fish plant workers lost their jobs and livelihoods in the region — devastating the coastal economy"(Monterey Bay Aquarium Seafood Watch).</p>
+                    <div class="impact-details">
+                        <strong>Risk:</strong> We're fishing at or beyond sustainable limits for most species, with reduced monitoring to prevent crashes
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="detailed-section">
+            <h2>💰 Economic Analysis: The True Cost of Inaction</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h3>Tourism Industry Analysis</h3>
+                    <p>Detailed breakdown of economic vulnerability in Monterey and Santa Cruz counties.</p>
+                    <div class="impact-details">
+                        <strong>At risk:</strong> Over 25,000 tourism jobs, 200+ hotels and B&Bs, 500+ restaurants, 50+ whale watching operations, 75+ dive shops and marine tour companies
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Property Value Impact</h3>
+                    <p>Coastal real estate values directly tied to environmental quality and scenic beauty.</p>
+                    <div class="impact-details">
+                        <strong>Projection:</strong> 15-25% property value decline if marine sanctuary loses protection, affecting 50,000+ homeowners
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Fishing Industry Economics</h3>
+                    <p>Commercial fishing generates $50M annually in direct revenue, supporting 1,200 jobs.</p>
+                    <div class="impact-details">
+                        <strong>Risk:</strong> Overfishing could collapse stocks worth hundreds of millions in long-term value
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Healthcare Costs</h3>
+                    <p>Pollution-related health impacts could cost local healthcare system millions annually.</p>
+                    <div class="impact-details">
+                        <strong>Conditions:</strong> Respiratory illness from algae blooms, neurological damage from mercury, gastrointestinal issues from contaminated water
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Research Funding Loss</h3>
+                    <p>UCSC research programs bring $45M annually in federal grants to the local economy.</p>
+                    <div class="impact-details">
+                        <strong>Multiplier effect:</strong> Every research dollar generates $2.50 in local economic activity through jobs, housing, and spending
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Infrastructure Costs</h3>
+                    <p>Climate change impacts requiring expensive adaptation measures for coastal communities.</p>
+                    <div class="impact-details">
+                        <strong>Needed:</strong> Sea level rise protection, storm surge barriers, wastewater treatment upgrades, beach nourishment programs
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="detailed-section">
+            <h2>🌍 Global Context: International Efforts vs. US Rollbacks</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h3>UN Ocean Decade Vision 2030</h3>
+                    <p>International initiative calling for radical reduction of ocean pollutants by 2030.</p>
+                    <div class="impact-details">
+                        <strong>US absence:</strong> American withdrawal from international agreements undermines global cooperation essential for ocean health
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>Paris Agreement Implementation</h3>
+                    <p>Global effort to reduce greenhouse gas emissions and ocean acidification.</p>
+                    <div class="impact-details">
+                        <strong>Impact:</strong> US departure signals to other nations that environmental protection isn't a priority, weakening worldwide efforts
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <h3>European Union Leadership</h3>
+                    <p>EU implementing comprehensive marine protection policies while US retreats.</p>
+                    <div class="impact-details">
+                        <strong>Contrast:</strong> EU banning single-use plastics, expanding marine protected areas, increasing environmental monitoring
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="call-to-action">
+            <h2>🎯 Take Action Now: Your Voice Matters</h2>
+            <p>The future of Monterey Bay depends on immediate community action. Federal rollbacks can be reversed, but only with sustained political pressure and community engagement.</p>
+            
+            <div class="action-grid">
+                <div class="action-card">
+                    <h3>Contact Representatives</h3>
+                    <ul>
+                        <li>Senator Alex Padilla: (202) 224-3553</li>
+                        <li>Senator Laphonza Butler: (202) 224-3841</li>
+                        <li>Rep. Jimmy Panetta: (202) 225-2861</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h3>Join Organizations</h3>
+                    <ul>
+                        <li>Save Our Shores</li>
+                        <li>Surfrider Foundation</li>
+                        <li>Monterey Bay Aquarium volunteer programs</li>
+
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h3>Community Engagement</h3>
+                    <ul>
+                        <li>Attend city council meetings</li>
+                        <li>Join beach cleanup events</li>
+                        <li>Participate in citizen science monitoring</li>
+                        <li>Support sustainable local businesses</li>
+                        <li>Share information on social media</li>
+                    </ul>
+                </div>
+                <div class="action-card">
+                    <h3>Spread Awareness</h3>
+                    <ul>
+                        <li>Share this infographic widely</li>
+                        <li>Host community discussions</li>
+                        <li>Write letters to local newspapers</li>
+                        <li>Create social media campaigns</li>
+                        <li>Talk to friends and family</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Research Team</h3>
+                    <p>UC Santa Cruz Undergraduate Researchers</p>
+                    <p>Djuna Burke, Kaden Lee, Deepak Karani, Ariella Gonzalez, Jessica Reyes-Fajardo</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Community Partner</h3>
+                    <p>Save Our Shores</p>
+                    <p>Katie Thompson, Community Outreach</p>
+                    <p>Contact: <a href="mailto:katie@saveourshores.org">katie@saveourshores.org</a></p>
+                    <p>Website: <a href="http://saveourshores.org">saveourshores.org</a></p>
+                </div>
+            
+            <div class="source">
+                <p><strong></strong>Works Cited</p>
+                <p><strong>Research:</strong>“Advocacy – Save Our Shores.” Saveourshores.org, 2024, saveourshores.org/advocacy/. Accessed 22 Aug. 2025.</p>
+                <p><strong>Additional Research:     </strong>Bunch, Erin. “Beyond Plastics - Working to End Single-Use Plastic Pollution.” Beyond Plastics - Working to End Single-Use Plastic Pollution, 4 June 2024, www.beyondplastics.org/news-stories/microplastics-in-food.</p>
+                <p><strong>Additional Research:     </strong>Czachor, Emily Mae. “Job Cuts at NOAA Drive Concerns about Extreme Weather Forecasts, as Climate Change Worsens Natural Disasters.” Cbsnews.com, CBS News, 11 Mar. 2025, www.cbsnews.com/news/noaa-national-weather-service-job-cuts-forecast-climate-change-natural-disasters/.</p>
+                <p><strong>Additional Research:     </strong>Dunagan, Christopher. “Rate of Ocean Acidification May Accelerate, Scientists Warn | Encyclopedia of Puget Sound.” Www.eopugetsound.org, 15 Dec. 2019, www.eopugetsound.org/magazine/IS/ocean-acdification.</p>
+                <p><strong>Additional Research:     </strong>“Fishes: MBNMS.” SIMoN, 7 Aug. 2017, sanctuarysimon.org/monterey-bay-nms/fishes/. Accessed 22 Aug. 2025.</p>
+                <p><strong>Additional Research:     </strong>Gewin, Virginia. “Farm Runoff May Be Tied to Respiratory Illness near the Salton Sea.” Civil Eats, 9 Dec. 2024, civileats.com/2024/12/09/farm-runoff-may-be-tied-to-respiratory-illness-near-the-salton-sea/.</p>
+                <p><strong>Additional Research:     </strong>Haifley, Dan. “Let’s Tell Congress Not to Cut NOAA’s Work – Including National Marine Sanctuaries, Fisheries and Weather.” Lookout Santa Cruz, 8 May 2025, lookout.co/lets-tell-congress-not-to-cut-noaas-work-including-national-marine-sanctuaries-fisheries-and-weather/story.</p>
+                <p><strong>Additional Research:     </strong>Hatje, V., and R. Rayfuse. “Understanding and Beating Marine Pollution under Ocean Decade Vision 2030 Challenge 1.” ICES Journal of Marine Science, edited by Linwood Pendleton, vol. 82, no. 2, Oxford University Press (OUP), Feb. 2025, https://doi.org/10.1093/icesjms/fsaf009.</p>
+                <p><strong>Additional Research:     </strong>Kimball, Justine. “Plastic Pollution - California Ocean Protection Council.” California Ocean Protection Council, 30 Sept. 2024, opc.ca.gov/water-quality/plastics/.</p>
+                <p><strong>Additional Research:     </strong>Kinebrew, Brooke. “Santa Cruz County Tourism Generates Nearly $1.5 Billion in Spending.” KSBW, 7 May 2025, www.ksbw.com/article/santa-cruz-county-tourism-15-billion-spending/64704122. Accessed 22 Aug. 2025.</p>
+                <p><strong>Additional Research:     </strong>“Maritime Affairs and Fisheries.” European Commission, 24 Apr. 2025, commission.europa.eu/about/departments-and-executive-agencies/maritime-affairs-and-fisheries_en.</p>
+                <p><strong>Additional Research:     </strong>Monterey Bay Aquarium. “Sea Otter.” Monterey Bay Aquarium, Monterey Bay Aquarium, 2020, www.montereybayaquarium.org/animals/animals-a-to-z/sea-otter.</p>
+                <p><strong>Additional Research:     </strong>“Monterey Bay National Marine Sanctuary Home Page.” Noaa.gov, 2015, montereybay.noaa.gov/.</p>
+                <p><strong>Additional Research:     </strong>“Monterey ca Fact Sheet | Population, Climate & Transportation.” Www.seemonterey.com, www.seemonterey.com/media/fact-sheet/.</p>
+                <p><strong>Additional Research:     </strong>“NOAA Office of National Marine Sanctuaries.” Noaa.gov, 2019, sanctuaries.noaa.gov/.</p>
+                <p><strong>Additional Research:     </strong>Ocean Conservancy. “Plastics in the Ocean.” Ocean Conservancy, 1 Feb. 2019, oceanconservancy.org/trash-free-seas/plastics-in-the-ocean/ .</p>
+                <p><strong>Additional Research:     </strong>“Rankings & Accomplishments.” Ucsc.edu, 2024, admissions.ucsc.edu/why-ucsc/rankings-accomplishments.    </p>
+                <p><strong>Additional Research:     </strong>Seafood Watch. “Avoid Overfishing.” Seafoodwatch.org, 2020, www.seafoodwatch.org/seafood-basics/sustainable-solutions/avoid-overfishing.</p>
+                <p><strong>Additional Research:     </strong>Stephens, Tim. “$2.4 Million Grant Supports Research on Coastal Ecosystems at UCSC and Other Monterey Bay Institutions.” News, 5 Aug. 2004, news.ucsc.edu/2004/08/2-4-million-grant-supports-research-on-coastal-ecosystems-at-ucsc-and-other-monterey-bay-institutions/. Accessed 22 Aug. 2025.</p>
+                <p><strong>Additional Research:     </strong>Thiagarajan, C., and Yuvarajan Devarajan. “The Urgent Challenge of Ocean Pollution: Impacts on Marine Biodiversity and Human Health.” Regional Studies in Marine Science, vol. 81, no. 103995, Elsevier, Dec. 2024, p. 103995, https://doi.org/10.1016/j.rsma.2024.103995.</p>
+                <p><strong>Additional Research:     </strong>“Tourism Matters.” Www.seemonterey.com, www.seemonterey.com/members/tourism-matters/.</p>
+                <p><strong>Additional Research:     </strong>UNFCCC. “The Paris Agreement.” United Nations Climate Change, 2015, unfccc.int/process-and-meetings/the-paris-agreement.</p>
+                <p><strong>Additional Research:     </strong>Montereybayaquarium.org, 2025, www.montereybayaquarium.org/about-us/how-we-are-sustainable.</p>
+                
+
+                <p><strong>Last Updated:</strong> August 21, 2025</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactive functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add click tracking for action buttons
+            document.querySelectorAll('.action-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('Action taken:', this.textContent);
+                });
+            });
+            
+            // Intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for scroll animations
+            document.querySelectorAll('.stat-card, .impact-item, .solution-card, .data-point').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+                
